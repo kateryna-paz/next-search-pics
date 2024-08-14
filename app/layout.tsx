@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import ReduxProvider from '@/lib/provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,9 +21,11 @@ export default function RootLayout({
       <Head>
         <link rel='shortcut icon' href='/favicon.ico' />
       </Head>
-      <body className={inter.className} suppressHydrationWarning={true}>
-        <main>{children}</main>
-      </body>
+      <ReduxProvider>
+        <body className={inter.className} suppressHydrationWarning={true}>
+          <main>{children}</main>
+        </body>
+      </ReduxProvider>
     </html>
   )
 }
