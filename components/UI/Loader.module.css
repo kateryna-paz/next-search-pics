@@ -1,6 +1,6 @@
 .loader {
   position: relative;
-  margin: 60px auto;
+  margin: 35px auto;
   width: 150px;
   height: 150px;
   background: transparent;
@@ -70,4 +70,12 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.text {
+  margin: 40px auto;
+  font-size: 18px;
+  color: #d8d8d8;
+  text-align: center;
+  font-style: italic;
 }

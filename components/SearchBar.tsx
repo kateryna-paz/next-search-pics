@@ -15,12 +15,13 @@ function SearchBar({ className, query, setQuery, onClick }: SearchBarProps) {
   return (
     <div className='relative mb-8 flex items-center gap-10 text-xl'>
       <Input
-        placeholder='Search...'
+        placeholder='Write the author name or title...'
         value={query}
         onChange={(value: string) => {
           setQuery(value)
         }}
         className='mx-4'
+        onKeyPress={(e: any) => e.key === 'Enter' && onClick()}
       />
       <Button type='find' onClick={onClick} className='mx-4'>
         Find

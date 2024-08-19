@@ -7,8 +7,15 @@ type InputProps = {
   placeholder: string
   value: string
   onChange: (value: string) => void
+  onKeyPress: (e: any) => void
 }
-function Input({ className, placeholder, value, onChange }: InputProps) {
+function Input({
+  className,
+  placeholder,
+  value,
+  onChange,
+  onKeyPress
+}: InputProps) {
   return (
     <div className={`${styles.inputControl} ${className}`}>
       <input
@@ -17,6 +24,7 @@ function Input({ className, placeholder, value, onChange }: InputProps) {
         type='text'
         value={value}
         onChange={e => onChange(e.target.value)}
+        onKeyPress={e => onKeyPress(e)}
       />
       <span className={`${styles.border} ${styles.borderAlt}`}></span>
     </div>

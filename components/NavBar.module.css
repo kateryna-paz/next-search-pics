@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  z-index: 10;
+  box-shadow: 0 2px 28px 0px rgba(95, 94, 94, 0.269);
+  background-color: #0c0f14;
+  border-radius: 30px;
+  padding: 10px 30px;
+  width: fit-content;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.scrolled {
+  opacity: 0.6;
+}
+
+.label {
+  padding: 8px 18px;
+  transition: all 400ms;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 400ms;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 400ms;
+  color: #736a64;
+}
+
+.label:hover:not(.active) {
+  border-bottom: 2px solid #cda673;
+  opacity: 0.6;
+}
+
+.label.active {
+  border-bottom: 2px solid #cda673;
+}
+
+.label.active .icon {
+  color: #e1bf94;
+  transform: scale(1.2);
+}

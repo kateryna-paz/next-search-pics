@@ -1,9 +1,12 @@
 import styles from './Loader.module.css'
 
-function Loader() {
+function Loader({children}: any) {
   return (
-    <div className={styles.loader}>
-      <span></span>
+    <div>
+      <p className={styles.text}>{children}</p>
+      <div className={styles.loader}>
+        <span></span>
+      </div>
     </div>
   )
 }

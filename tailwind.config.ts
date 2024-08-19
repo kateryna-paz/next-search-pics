@@ -16,6 +16,18 @@ const config: Config = {
         md: '1.5rem',
         lg: '2rem'
       }
+    },
+    extend: {
+      colors: {
+        lion: '#cda673',
+        silver: '#CDCACC',
+        lilak: '#9184aa',
+        viridian: '#2A7F62',
+        'light-green': '#B0FF92',
+        'mint-green': '#c5ffe4',
+        'light-orange': '#fff1ea',
+        plum: '#D68FD6'
+      }
     }
   },
   plugins: []
