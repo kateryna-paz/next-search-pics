@@ -1,4 +1,5 @@
 export interface Book {
+  id: string
   title: string
   author_name: Array<string>
   language: Array<string>

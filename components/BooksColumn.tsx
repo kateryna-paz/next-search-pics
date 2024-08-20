@@ -8,7 +8,6 @@ function BooksColumn({ books }: { books: Book[] }) {
         <BookCard
           key={`${book.title}-${book.first_publish_year}-${index}`}
           book={book}
-          index={index}
         ></BookCard>
       ))}
     </div>

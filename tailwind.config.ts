@@ -25,7 +25,8 @@ const config: Config = {
         viridian: '#2A7F62',
         'light-green': '#B0FF92',
         'mint-green': '#c5ffe4',
-        'light-orange': '#fff1ea',
+        oranger: '#f97316',
+        'light-orange': '#fff7f3',
         plum: '#D68FD6'
       }
     }

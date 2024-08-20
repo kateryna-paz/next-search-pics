@@ -1,12 +1,31 @@
 import { Book } from '@/app/(data)/interfaces'
 import LikeButton from './UI/LikeButton'
+import { AppDispatch, useAppSelector } from '@/lib/store'
+import { useDispatch } from 'react-redux'
+import { addFavourite, removeFavourite } from '@/lib/features/favourite-slice'
+import { useState } from 'react'
 
-function BookCard({ book, index }: { book: Book; index: number }) {
+function BookCard({ book }: { book: Book }) {
+  const dispatch = useDispatch<AppDispatch>()
+  const { favourites } = useAppSelector(state => state.favourites)
+  const [isLiked, setIsLiked] = useState(
+    favourites.some(b => b.title === book.title)
+  )
+
+  const handleLike = () => {
+    setIsLiked((isLiked: boolean) => !isLiked)
+    if (isLiked) {
+      dispatch(removeFavourite(book))
+    } else {
+      dispatch(addFavourite(book))
+    }
+  }
   return (
-    <div className='hover:shadow-3xl bg-light-orange relative transform cursor-pointer rounded-lg border-4 border-white px-3 py-4 shadow-lg transition-transform duration-500 hover:-translate-y-2 hover:border-orange-500'>
+    <div className='hover:shadow-3xl relative transform cursor-pointer rounded-lg border-4 border-white bg-light-orange px-3 py-4 shadow-lg transition-transform duration-500 hover:-translate-y-2 hover:border-orange-500'>
       <div className='absolute right-4 top-4'>
-        <LikeButton />
+        <LikeButton onClick={handleLike} isLiked={isLiked} />
       </div>
+
       <div>
         <div className='flex flex-col pb-20 pt-16'>
           <h1 className='text-center text-2xl font-semibold text-gray-800'>

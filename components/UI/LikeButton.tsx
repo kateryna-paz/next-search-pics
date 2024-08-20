@@ -1,9 +1,19 @@
 import styles from './LikeButton.module.css'
-
-function Like() {
+function LikeButton({
+  onClick,
+  isLiked
+}: {
+  onClick: () => void
+  isLiked: boolean
+}) {
   return (
-    <div className={styles.heartContainer} title='Like'>
-      <input type='checkbox' className={styles.checkbox} />
+    <div className={styles.heartContainer} title='Like' onClick={onClick}>
+      <input
+        type='checkbox'
+        className={styles.checkbox}
+        checked={isLiked}
+        readOnly
+      />
       <div className={styles.svgContainer}>
         <svg
           viewBox='0 0 24 24'
@@ -37,4 +47,4 @@ function Like() {
   )
 }
 
-export default Like
+export default LikeButton

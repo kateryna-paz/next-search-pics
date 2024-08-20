@@ -50,7 +50,7 @@ export default function Home() {
     dispatch(setCurrentPage(page))
   }
   return (
-    <main className='mb-12 flex min-h-screen flex-col'>
+    <main className='my-12 flex min-h-screen flex-col'>
       <div className='flex flex-col items-center justify-center'>
         <h1 className='mx-10 my-20 text-center text-7xl font-bold leading-relaxed text-white'>
           The best books for you with{' '}

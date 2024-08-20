@@ -25,6 +25,7 @@ export default function useFetchBooks() {
       })
 
       const newBooks = res.data.docs.map((b: any) => ({
+        id: `${b.title}-${b.number_of_pages_median}-${b.first_publish_year}`,
         title: b.title,
         author_name: b.author_name || [],
         number_of_pages_median: b.number_of_pages_median,
